@@ -1,0 +1,158 @@
+.section {
+    min-height: 100vh;
+
+    @include flexible(flex, row, nowrap, center, center)
+}
+.card {
+    display: grid;
+    gap: 30px;
+    grid-template-areas:
+    "main section section section "
+    "main section section section "
+    ;
+    &__main {
+        border-radius: 15px 15px 20px 20px;
+        background-color: var(--dark-blue);
+        grid-area: main;
+    }
+    &__section {
+        grid-area: section;
+    }
+}
+.card__section {
+    display: grid;
+    gap: 30px;
+    grid-template-areas:
+        "work      play    study "
+        "exercise  social  selfcare"
+    ;
+}
+.card{
+    &__item{
+        width: 250px;
+        border-radius: 15px 15px 20px 20px;
+        background-repeat: no-repeat;
+        background-position: 85% -10px;
+        &:nth-child(1){
+            background-color: var(--light-red-work);
+            background-image: url('../images/icon-work.svg');
+            grid-area: work;
+        }
+        &:nth-child(2){
+            background-color: var(--soft-blue-play);
+            background-image: url('../images/icon-play.svg');
+            grid-area: play;
+        }
+        &:nth-child(3){
+            background-color: var(--light-red-study);
+            background-image: url('../images/icon-study.svg');
+            grid-area: study;
+        }
+        &:nth-child(4){
+            background-color: var(--lime-green-exercise);
+            background-image: url('../images/icon-exercise.svg');
+            background-position: 85% 0px;
+            grid-area: exercise;
+        }
+        &:nth-child(5){
+            background-color: var(--violet-social);
+            background-image: url('../images/icon-social.svg');
+            grid-area: social;
+        }
+        &:nth-child(6){
+            background-color: var(--soft-orange);
+            background-image: url('../images/icon-self-care.svg');
+            grid-area: selfcare;
+        }
+    }
+
+}
+
+.item {
+    width: 250px;
+    @include flexible(flex, column, nowrap, end, start);
+
+    &__body {
+        width: 100%;
+        background-color: var(--blue);
+        padding: 30px 35px 90px;
+        border-radius: 15px;
+
+        @include flexible(flex, column, nowrap, start, start);
+        gap: 40px;
+    }
+    &__footer {
+        width: 100%;
+        padding: 35px;
+        @include flexible(flex, column, nowrap, start, start);
+        gap: 10px;
+    }
+    &__h1 {
+        font-size: 50px;
+        font-weight: var(--font-light-bold);
+    }
+
+    &__h2 {
+
+        font-size: 38px;
+        line-height: 1.2;
+        font-weight: var(--font-light-bold);
+    }
+    &__h3 {
+        font-size: 20px;
+        &--main{
+            color: var(--pale-blue);
+            cursor: pointer;
+            &:hover{
+                color: var(--title-color);
+                transition: color .2s ease;
+            }
+        }
+        &--active {
+            color: var(--title-color);
+        }
+    }
+    &__h5 {
+        font-size: 15px;
+        color: var(--pale-blue);
+        font-weight: var(--font-semi-bold);
+    }
+
+    &__img {
+        border-radius: 50%;
+        border: 3px solid #ffffff;
+        width: 80px;
+        height: 80px;
+
+    }
+
+    &__task {
+        width: 100%;
+        background-color: var(--dark-blue);
+        border-radius: 15px;
+        padding: 30px 35px;
+
+        @include flexible(flex, column, nowrap, start, start);
+        gap: 15px;
+
+        &:hover {
+            transition: background-color .2s ease;
+            background-color: var(--desaturated-blue);
+        }
+    }
+    &__icono {
+        width: 5px;
+        height: 5px;
+    }
+    &__options {
+        width: 100%;
+        @include flexible(flex, row, nowrap, space-between,center);
+    }
+    &__main {
+        width: 100%;
+    }
+    &__option {
+        @include flexible(flex, row, nowrap, start, start);
+        gap: 5px;
+    }
+}

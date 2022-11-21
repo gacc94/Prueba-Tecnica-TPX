@@ -1,0 +1,48 @@
+/*=============== BASE ===============*/
+*,
+::before,
+::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family     : var(--body-font);
+    font-size       : 1rem;
+    background-color: var(--very-dark-blue);
+    transition      : .5s;
+    overflow-x      : hidden ;
+
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight : var(--font-semi-bold);
+    color       : var(--title-color);
+    line-height : 1.5;
+}
+a {
+    text-decoration : none;
+    display         : block;
+    color           : inherit;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+}
+
+::selection {
+    background-color: var(--blue);
+}

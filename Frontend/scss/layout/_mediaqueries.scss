@@ -1,0 +1,92 @@
+@media (max-width: 375px) {
+    .card {
+        margin: 35px;
+        gap: 10px;
+
+        grid-template-areas:
+            "main"
+            "section"
+        ;
+        &__main {
+            width: 315px;
+            min-height: 160px;
+            background-color: var(--dark-blue);
+            grid-area: main;
+        }
+        &__section {
+            grid-area: section;
+        }
+        &__item {
+            min-height: 160px;
+            width: 315px;
+        }
+    }
+    .card__section {
+        gap: 25px;
+
+        grid-template-areas:
+            "main"
+            "work"
+            "play"
+            "study"
+            "exercise"
+            "social"
+            "selfcare"
+        ;
+    }
+
+    .item {
+        &__body {
+            padding: 25px;
+            @include flexible(flex, row, nowrap, start, start);
+            gap: 15px;
+        }
+
+        &__footer {
+            padding: 25px 30px;
+            @include flexible(flex, row, nowrap, space-between, center);
+        }
+
+        &__h1 {
+            font-size: 26px;
+        }
+
+        &__h2 {
+            font-size: 20px;
+        }
+
+        &__h3 {
+            font-size: 16px;
+        }
+
+        &__h5 {
+            font-size: 11px;
+        }
+
+        &__img {
+            width: 60px;
+            height: 60px;
+        }
+        &__task {
+            width: 100%;
+            background-color: var(--dark-blue);
+            padding: 25px;
+
+            gap: 10px;
+        }
+
+        &__icono {
+            width: 4px;
+            height: 4px;
+        }
+        &__options {
+            @include flexible(flex, row, nowrap, space-between, center);
+        }
+        &__main {
+            @include flexible(flex, row, nowrap, space-between, center);
+        }
+        &__option {
+            gap: 4px;
+        }
+    }
+}
